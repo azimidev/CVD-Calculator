@@ -67,7 +67,7 @@ if(isset($_POST['submit'])) {
 				<a class="navbar-brand" href="index.php">Group Delta</a>
 			</div>
 			<div class="navbar-collapse collapse" id="navbar-collapse-9">
-				<form class="navbar-form navbar-right" role="form" action="index.php" method="POST">
+				<form class="navbar-form navbar-right" role="form" action="reset_password.php?token=<?php echo $user["token"]; ?>" method="POST">
 					<div class="form-group">
 						<input type="text" placeholder="Username" class="form-control" name="username" value="<?php echo htmlentities($username); ?>" required>
 					</div>
@@ -105,8 +105,8 @@ if(isset($_POST['submit'])) {
 								</div>
 							</section>
 							<section class="row">
-								<label class="col col-lg-4 control-label" for="password_confirm">New Password Confirm:
-								</label>
+								<label class="col col-lg-4 control-label" for="password_confirm">New Password
+								                                                                 Confirm:</label>
 								<div class="controls">
 									<div class="input-group">
 										<span style="font-size: 10px;" class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
@@ -119,7 +119,8 @@ if(isset($_POST['submit'])) {
 								<label class="col col-lg-4 control-label" for="submit"></label>
 								<div class="controls">
 									<a href="index.php" class="btn btn-danger">Cancel</a>
-									<button class="btn btn-primary" name="reset" id="submit" type="submit">Set Password
+									<button class="btn btn-primary" name="reset" id="submit" type="submit">Set
+									                                                                       Password
 									</button>
 								</div>
 							</section>

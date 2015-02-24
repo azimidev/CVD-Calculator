@@ -38,7 +38,7 @@ if(isset($_POST['submit'])) {
 			redirect_to("forgot_password.php");
 		}
 	} else {
-		// Username was not found; don't do anything for security reasons
+		// Username was not found; don't do anything
 	}
 	// Message returned is the same whether the user
 	// was found or not, so that we don't reveal which
@@ -62,7 +62,7 @@ if(isset($_POST['submit'])) {
 				<a class="navbar-brand" href="index.php">Group Delta</a>
 			</div>
 			<div class="navbar-collapse collapse" id="navbar-collapse-9">
-				<form class="navbar-form navbar-right" role="form" action="index.php" method="POST">
+				<form class="navbar-form navbar-right" role="form" action="forgot_password.php" method="POST">
 					<div class="form-group">
 						<input type="text" placeholder="Username" class="form-control" name="username" value="<?php echo htmlentities($username); ?>" required>
 					</div>
@@ -76,6 +76,7 @@ if(isset($_POST['submit'])) {
 					</div>
 				</form>
 			</div>
+			<!--/.navbar-collapse -->
 		</div>
 	</nav>
 	<section class="container">
