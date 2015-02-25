@@ -164,7 +164,7 @@ function confirm_doctor_signned_in() {
 }
 
 function calculate_women($age, $ldl_c, $cholesterol, $hdl_c, $systolic, $diastolic, $db, $smoker) {
-	$total_point = 0;
+	$total_points = 0;
 	if($age > 30 && $age < 34) {
 		$total_points += -9;
 	}
@@ -250,7 +250,7 @@ function calculate_women($age, $ldl_c, $cholesterol, $hdl_c, $systolic, $diastol
 }
 
 function calculate_men($age, $ldl_c, $cholesterol, $hdl_c, $systolic, $diastolic, $db, $smoker) {
-	$total_point = 0;
+	$total_points = 0;
 	if($age > 30 && $age < 34) {
 		$total_points += -1;
 	}
