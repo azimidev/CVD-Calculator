@@ -192,4 +192,5 @@ if (isset($_POST['submit'])) {
 			</table>
 		</div>
 </section>
+<br>
 <?php include("../includes/footer.php"); ?>

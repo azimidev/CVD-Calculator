@@ -11,10 +11,12 @@ function checkResetPass() {
 		pass2.style.backgroundColor = goodColor;
 		message.style.color = goodColor;
 		message.innerHTML = "<span class='glyphicon glyphicon-ok'></span>"
+		return false;
 	} else {
 		pass2.style.backgroundColor = badColor;
 		message.style.color = badColor;
 		message.innerHTML = "<span class='glyphicon glyphicon-remove'></span>"
+		return true;
 	}
 }
 

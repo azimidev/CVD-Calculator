@@ -11,7 +11,7 @@
 		var chart = new CanvasJS.Chart("chartContainer",
 		{      
 			title:{
-				text: "Framingham Risk Chart"
+				text: "CVD Risk Chart"
 			},
 			animationEnabled: true,
 			axisY :{
@@ -49,48 +49,15 @@
 				{x: 10, y: <?php echo result($health["total_point"]+10); ?>}
 				]
 			},
-			// {        
-			// 	type: "splineArea",  
-			// 	name: "Recommended",
-			// 	color: "green",
-			// 	showInLegend: true,
-			// 	dataPoints: [
-			// 	<?php if($user["gender"] == "Male") { ?>
-			// 		{x: 0, y: <?php echo result(-8); ?>},
-			// 		{x: 1, y: <?php echo result(-8+1); ?>},
-			// 		{x: 2, y: <?php echo result(-8+2); ?>},
-			// 		{x: 3, y: <?php echo result(-8+3); ?>},
-			// 		{x: 4, y: <?php echo result(-8+4); ?>},
-			// 		{x: 5, y: <?php echo result(-8+5); ?>},
-			// 		{x: 6, y: <?php echo result(-8+6); ?>},
-			// 		{x: 7, y: <?php echo result(-8+7); ?>},
-			// 		{x: 8, y: <?php echo result(-8+8); ?>},
-			// 		{x: 9, y: <?php echo result(-8+9); ?>},
-			// 		{x: 10, y: <?php echo result(-8+10); ?>}
-			// 	<?php } ?>
-			// 	<?php if($user["gender"] == "Female") { ?>
-			// 		{x: 0, y: <?php echo result(-10); ?>},
-			// 		{x: 1, y: <?php echo result(-10+1); ?>},
-			// 		{x: 2, y: <?php echo result(-10+2); ?>},
-			// 		{x: 3, y: <?php echo result(-10+3); ?>},
-			// 		{x: 4, y: <?php echo result(-10+4); ?>},
-			// 		{x: 5, y: <?php echo result(-10+5); ?>},
-			// 		{x: 6, y: <?php echo result(-10+6); ?>},
-			// 		{x: 7, y: <?php echo result(-10+7); ?>},
-			// 		{x: 8, y: <?php echo result(-10+8); ?>},
-			// 		{x: 9, y: <?php echo result(-10+9); ?>},
-			// 		{x: 10, y: <?php echo result(-10+10); ?>}
-			// 	<?php } ?>
-			// 	]
-			// }
 			]
 		});
 chart.render();
 }
 </script>
+<br /><br /><br /><br />
 <section class="col-lg-5">
-<h3>Patient: <?php echo htmlentities($user["firstname"]) ." ". htmlentities($user["lastname"]) ?></h3>
 	<a href="patient_content.php" class="btn btn-warning">Back</a>
+	<h3>Patient: <?php echo htmlentities($user["firstname"]) ." ". htmlentities($user["lastname"]) ?></h3>
 	<dl class="dl-horizontal">
 		<dt>Age :</dt>
 		<dd><?php echo $health["age"]; ?></dd>
@@ -119,9 +86,9 @@ chart.render();
 		<dt>Total Points :</dt>
 		<dd><?php echo $health["total_point"]; ?>
 			<?php if($user["gender"] == "Male"): ?> 
-				<span class="badge">Recommended point for male is -8</span>
+				<span class="badge">Lowest point for male is -8</span>
 			<?php else: ?>
-				<span class="badge">Recommended point for female is -10</span>
+				<span class="badge">Lowest point for female is -10</span>
 			<?php endif; ?>
 		</dd>
 
@@ -130,11 +97,16 @@ chart.render();
 
 		<dt><label for="comment">Recommendation :</label></dt>
 		<dd>
+			<?php if(!empty($health["rec"])) { ?>
 			<p class="text-primary"><?php echo htmlentities($health["rec"]); ?></p>
+			<?php } else { ?>
+			<p class="text-danger">No recommendation!</p>
+			<?php } ?>
 		</dd>
 	</dl>
 </section>
 <section class="col-lg-7">
 	<div id="chartContainer" style="height: 500px; width: 100%;">
-	</section>
+</section>
+<br />
 	<?php include("../includes/footer.php"); ?>

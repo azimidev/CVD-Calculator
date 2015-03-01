@@ -50,6 +50,37 @@ footer {
   }
 
 
+@-webkit-keyframes box {
+  0% { background-color : #FFB52D; }
+  25% { background-color : #FF5453; }
+  50% { background-color : #64A4FF; }
+  75% { background-color : #31AF24; }
+  100% { background-color : #7B4CAF; }
+}
+
+@-moz-keyframes box {
+  0% { background-color : #FFB52D; }
+  25% { background-color : #FF5453; }
+  50% { background-color : #64A4FF; }
+  75% { background-color : #31AF24; }
+  100% { background-color : #7B4CAF; }
+}
+
+@-o-keyframes box {
+  0% { background-color : #FFB52D; }
+  25% { background-color : #FF5453; }
+  50% { background-color : #64A4FF; }
+  75% { background-color : #31AF24; }
+  100% { background-color : #7B4CAF; }
+}
+
+@keyframes box {
+  0% { background-color : #FFB52D; }
+  25% { background-color : #FF5453; }
+  50% { background-color : #64A4FF; }
+  75% { background-color : #31AF24; }
+  100% { background-color : #7B4CAF; }
+}
 /*.carousel-inner{
   width:100%;
   max-height: 500px !important;

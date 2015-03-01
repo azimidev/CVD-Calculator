@@ -59,4 +59,5 @@ $health_set = find_health_by_user_id($patient_id);
 							</table>
 				</div>	</section>
 </section>
+<br>
 <?php include("../includes/footer.php"); ?>

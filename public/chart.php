@@ -160,9 +160,9 @@ Please find your recent CVD risk point below:
 			<dt>Total Points :</dt>
 			<dd><?php echo $health["total_point"]; ?>
 				<?php if($user["gender"] == "Male"): ?> 
-					<span class="badge">Recommended point for male is -8</span>
+					<span class="badge">Lowest point for male is -8</span>
 				<?php else: ?>
-					<span class="badge">Recommended point for female is -10</span>
+					<span class="badge">Lowest point for female is -10</span>
 				<?php endif; ?>
 			</dd>
 
@@ -187,6 +187,7 @@ Please find your recent CVD risk point below:
 		<div id="chartContainer" style="height: 500px; width: 100%;">
 	</section>
 </div>
+<br>
 	<script>
 		function printPage() { window.print(); }
 	</script>

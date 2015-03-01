@@ -19,26 +19,31 @@
 	<section class="col col-lg-12">
 		<h3>Your Patients</h3>
 			<div class="table-responsive">
-				<table class="table table-hover">
+				<table class="table table-hover table-bordered">
 					<thead>
 						<tr>
-							<th>Username</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Gender</th>
-							<th>DOB</th>
-							<th>Actions</th>
+							<th class="success">Username</th>
+							<th class="info">First Name</th>
+							<th class="info">Last Name</th>
+							<th class="warning">Gender</th>
+							<th class="warning">DOB</th>
+							<th class="danger">Recent Point</th>
+							<th class="active">Actions</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php while ($user = mysqli_fetch_assoc($user_set)) { ?>
 						<tr>
-							<td><?php echo htmlentities($user["username"]); ?></td>
-							<td><?php echo htmlentities($user["firstname"]); ?></td>
-							<td><?php echo htmlentities($user["lastname"]); ?></td>
-							<td><?php echo htmlentities($user["gender"]); ?></td>
-							<td><?php echo htmlentities($user["dob"]); ?></td>
-							<td><a class="btn btn-primary" href="calculate.php?id=<?php echo urldecode($user["id"]); ?>">Calculate Risk</a></td>
+							<td class="success"><?php echo htmlentities($user["username"]); ?></td>
+							<td class="info"><?php echo htmlentities($user["firstname"]); ?></td>
+							<td class="info"><?php echo htmlentities($user["lastname"]); ?></td>
+							<td class="warning"><?php echo htmlentities($user["gender"]); ?></td>
+							<td class="warning"><?php echo htmlentities($user["dob"]); ?></td>
+							<td class="danger"><?php 
+								$all_health = find_all_health_for_user($user["id"]);
+								echo $all_health["total_point"];
+							 ?></td>
+							<td class="active"><a class="btn btn-info" href="calculate.php?id=<?php echo urldecode($user["id"]); ?>">Calculate Risk</a></td>
 						</tr>
 						<?php } ?>
 					</tbody>
@@ -46,4 +51,5 @@
 			</div>
 	</section>
 </section>
+<br>
 <?php include("../includes/footer.php"); ?>

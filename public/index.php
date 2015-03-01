@@ -93,4 +93,6 @@ if (isset($_POST['submit'])) {
 	</div>
 </div>
 </section>
+<br>
+<br>
 <?php include("../includes/footer.php"); ?>

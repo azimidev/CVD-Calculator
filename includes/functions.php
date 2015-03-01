@@ -121,6 +121,22 @@ function find_health_by_user_id($id) {
 	return $user_set;
 }
 
+function find_all_health_for_user($user_id) {
+	global $connection;
+	$safe_user_id = mysqli_real_escape_string($connection, $user_id);
+	$query  = "SELECT * ";
+	$query .= " FROM Health ";
+	$query .= " WHERE patient_id = {$safe_user_id} ";
+	$query .= "ORDER BY date DESC";
+	$health_set = mysqli_query($connection, $query);
+	confirm_query($health_set);
+	if($health = mysqli_fetch_assoc($health_set)) {
+		return $health;
+	} else {
+		return NULL;
+	}
+}
+
 function doctor_authenticate($username, $password) {
 	global $connection;
 	$safe_username = mysqli_real_escape_string($connection, $username);

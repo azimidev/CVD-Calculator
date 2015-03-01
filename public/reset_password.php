@@ -35,7 +35,7 @@ if(isset($_POST['submit'])) {
 	$password         = $_POST['pass'];
 	$password_confirm = $_POST['password_confirm'];
 	if($password !== $password_confirm) {
-		$message = "Password confirmation does not match password.";
+		$_SESSION["message"] = "Password confirmation does not match password.";
 	} else {
 		$new_pass = password_encrypt($_POST["pass"]);
 		// update password
@@ -47,7 +47,7 @@ if(isset($_POST['submit'])) {
 			$_SESSION["message"] = "Thank You! You reset your password successfully.";
 			redirect_to('index.php');
 		} else {
-			$message = "Could not perform the update";
+			$_SESSION["message"] = "Could not perform the update";
 		}
 	}
 } else {
