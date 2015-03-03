@@ -404,6 +404,62 @@ function result($point) {
 	return $value;
 }
 
+function female_result($point) {
+	$value = 0;
+	if($point < -2) {
+		$value = 1;
+	}
+	if($point == -1 || $point == 0 || $point == 1) {
+		$value = 2;
+	}
+	if($point == 2 || $point == 3) {
+		$value = 3;
+	}
+	if($point == 4) {
+		$value = 4;
+	}
+	if($point == 5) {
+		$value = 5;
+	}
+	if($point == 6) {
+		$value = 6;
+	}
+	if($point == 7) {
+		$value = 7;
+	}
+	if($point == 8) {
+		$value = 8;
+	}
+	if($point == 9) {
+		$value = 9;
+	}
+	if($point == 10) {
+		$value = 11;
+	}
+	if($point == 11) {
+		$value = 13;
+	}
+	if($point == 12) {
+		$value = 15;
+	}
+	if($point == 13) {
+		$value = 17;
+	}
+	if($point == 14) {
+		$value = 20;
+	}
+	if($point == 15) {
+		$value = 24;
+	}
+	if($point == 16) {
+		$value = 27;
+	}
+	if($point >= 17) {
+		$value = 32;
+	}
+	return $value;
+}
+
 function password_encrypt($password) {
 	$hash_format = "$2y$10$";   // Tells PHP to use Blowfish with a "cost" of 10
 	$salt_length = 22;   // Blowfish salts should be 22-characters or more
