@@ -577,4 +577,3 @@ CVD Website';
 		return FALSE;
 	}
 }
-
