@@ -5,11 +5,16 @@
 <?php
 $user = find_patient_by_id($_GET["id"]);
 if (!$user) {
+	// IF COULDNT FIND THE USER REDIRECT BACK
 	redirect_to("doctor_content.php");
 }
+// FIND THE HEALTH BY ID TAKEN FROM GET SUPERGLOBAL
 $health_set = find_health_by_user_id($_GET["id"]);
+// CALCULATE AGE FROM CURRENT YEAR MINUS DATE OF BIRTH
 $age = (int)(date("Y") - $user["dob"]);
+// IF FORM SUBMITTED
 if (isset($_POST['submit'])) {
+	// IF THERE ARE NO ERRORS
 	if (empty($errors)) {
 		$user_id 	 	= $user["id"];
 		$gender 	 	= $user["gender"];
@@ -22,14 +27,18 @@ if (isset($_POST['submit'])) {
 		$db 		 	= (int)$_POST["db"];
 		$smoker 	 	= (int)$_POST["smoker"];
 		
+		// IF GENDER IS MALE CALCULATE POINT BY MALE ALGORITHM
 		if ($user["gender"] == "Male"){
 			$total_points = calculate_men($age, $ldl_c, $cholesterol, $hdl_c, $systolic, $diastolic, $db, $smoker);
+		// IF GENDER IS FEMALE CALCULATE POINT BY FEMALE ALGORITHM
 		} elseif ($user["gender"] == "Female") {
 			$total_points = calculate_women($age, $ldl_c, $cholesterol, $hdl_c, $systolic, $diastolic, $db, $smoker);
+		// OTHERWISE RETURN NOTHING
 		} else {
 			$total_points = NULL;
 		}
 
+		// BUILD QUERY TO PUT THE PATIENTS HEALTH DETAILS TO DATABASE INTO "HEALTH" TABLE
 		$query = "INSERT INTO Health (";
         $query .= "  patient_id, gender, age, ldl_c, cholesterol, hdl_c, bp, diabetes, smoker, total_point";
         $query .= ") VALUES (";
@@ -37,9 +46,11 @@ if (isset($_POST['submit'])) {
         $query .= ")";
 		$result = mysqli_query($connection, $query);
 
+		// IF RESULT IS TRUE
 		if ($result) {
 			$_SESSION["message"] = "Health Profile added.";
 			redirect_to("calculate.php?id=". $user["id"]);
+		// IF RESULT IS FALSE 
 		} else {
 			$_SESSION["message"] = "Health Profile creation failed! Please fill out all the fields correctly!";
 		}

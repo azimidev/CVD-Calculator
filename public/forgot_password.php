@@ -5,8 +5,10 @@
 <?php
 $username = "";
 if(isset($_POST['submit'])) {
+	// VALIDATION
 	$required_fields = array("username", "password");
 	validate_presences($required_fields);
+	// IF THERE IS NO ERROR
 	if(empty($errors)) {
 		$username      = trim($_POST["username"]);
 		$password      = trim($_POST["password"]);
