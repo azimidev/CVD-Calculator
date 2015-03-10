@@ -5,7 +5,7 @@
 <?php
 $user = find_patient_by_id($_GET["id"]);
 if (!$user) {
-	// IF COULDNT FIND THE USER REDIRECT BACK
+	// IF COULDN'T FIND THE USER REDIRECT BACK
 	redirect_to("doctor_content.php");
 }
 // FIND THE HEALTH BY ID TAKEN FROM GET SUPERGLOBAL

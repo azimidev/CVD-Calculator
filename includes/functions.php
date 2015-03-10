@@ -25,10 +25,10 @@ function confirm_query($result_set) {
 function form_errors($errors = array()) {
 	$output = "";
 	if(!empty($errors)) {
-		$output = "<div class=\"alert alert-info alert-dismissible\" role=\"alert\">";
-		$output .= "<button type=\"button\" class=\"close\" data-dismiss=\"alert\">";
-		$output .= "<span aria-hidden=\"true\">&times;</span>";
-		$output .= "<span class=\"sr-only\"></span>";
+		$output = "<div class='alert alert-info alert-dismissible' role='alert'>";
+		$output .= "<button type='button' class='close' data-dismiss='alert'>";
+		$output .= "<span aria-hidden='true'>&times;</span>";
+		$output .= "<span class='sr-only'></span>";
 		$output .= "</button>";
 		$output .= "</ul>";
 		foreach($errors as $key => $error) {
