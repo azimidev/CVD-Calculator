@@ -577,3 +577,12 @@ CVD Website';
 		return FALSE;
 	}
 }
+
+function search_patient($search = "") {
+	global $connection;
+	$safe_search = mysqli_real_escape_string($connection, $search);
+	$query       = "SELECT * FROM Patients WHERE username LIKE '%{$safe_search}%' OR firstname LIKE '%{$safe_search}%' OR lastname LIKE '%{$safe_search}%' OR gender LIKE '%{$safe_search}%' OR email LIKE '%{$safe_search}%'";
+	$search_set  = mysqli_query($connection, $query);
+	confirm_query($search_set);
+	return $search_set;
+}

@@ -91,7 +91,6 @@ if (isset($_POST['submit'])) {
 		<p style="padding:5px;border-radius:5px; text-align:center;" class="bg-info">Zeeshan Minhas <small>(Analyst) K1236469</small></p>
 		<p style="padding:5px;border-radius:5px; text-align:center;" class="bg-warning">Hamza Ashraf <small>(Tester) K1217559</small></p>
 	</div>
-</div>
 </section>
 <br>
 <br>
