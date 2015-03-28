@@ -84,12 +84,8 @@ if (isset($_POST['submit'])) {
 <section class="container">
 	<?php echo message(); ?> <?php echo form_errors($errors); ?>
 	<div class="row">
-		<h3>Group Members</h3>
-		<p style="padding:5px;border-radius:5px; text-align:center;" class="bg-primary">Ali Shaikh <small>(Manager) K1052280</small></p>
-		<p style="padding:5px;border-radius:5px; text-align:center;" class="bg-danger">Hassan Azimi <small>(Programmer) K1221692</small></p>
-		<p style="padding:5px;border-radius:5px; text-align:center;" class="bg-success">Lennard Graham <small>(Programmer) K1221683</small></p>
-		<p style="padding:5px;border-radius:5px; text-align:center;" class="bg-info">Zeeshan Minhas <small>(Analyst) K1236469</small></p>
-		<p style="padding:5px;border-radius:5px; text-align:center;" class="bg-warning">Hamza Ashraf <small>(Tester) K1217559</small></p>
+		<h3>Programmer and Designer:</h3>
+		<p style="padding:5px;border-radius:5px; text-align:center;" class="bg-primary">Hassan Azimi <small>(Programmer) K1221692</small></p>
 	</div>
 </section>
 <br>
