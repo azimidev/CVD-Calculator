@@ -45,10 +45,10 @@ if (isset($_POST['submit'])) {
 		<div class="navbar-collapse collapse" id="navbar-collapse-9">
 			<form class="navbar-form navbar-right" role="form" action="index.php" method="POST">
 				<div class="form-group">
-					<input type="text" placeholder="Username" class="form-control" name="username" required value="<?php echo htmlentities($username); ?>">
+					<input type="text" placeholder="Username" class="form-control" name="username"  value="<?php echo htmlentities($username); ?>">
 				</div>
 				<div class="form-group">
-					<input type="password" placeholder="Password" class="form-control" name="password" value="" required>
+					<input type="password" placeholder="Password" class="form-control" name="password" value="" >
 				</div>
 				<button type="submit" name="submit" class="btn btn-success">Sign in</button><br>
 				<div class="form-group">
