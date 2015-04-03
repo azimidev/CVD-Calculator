@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Cvd-calculator by hassanazimi</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Cvd-calculator</h1>
+        <p>This is a PHP Cardiovascular Disease Calculator system created by Hassan Azimi</p>
+
+        <p class="view"><a href="https://github.com/hassanazimi/CVD-Calculator">View the Project on GitHub <small>hassanazimi/CVD-Calculator</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/hassanazimi/CVD-Calculator/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/hassanazimi/CVD-Calculator/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/hassanazimi/CVD-Calculator">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="cvd-calculator" class="anchor" href="#cvd-calculator" aria-hidden="true"><span class="octicon octicon-link"></span></a>CVD-Calculator</h1>
+
+<p>This is a PHP Cardiovascular Disease Calculator system created and maintained by Hassan Azimi for London Kingston University module called Dependable System in Software Engineering field.The purpose is to represent the hospital system where doctors and patients are involved and where doctors have ability to login and use the system. Patients also have the ability to be registered by doctors and and used the system. Patients are also have ability to reset their password subject to their emails on file.</p>
+
+<h1>
+<a id="what-does-this-app-do" class="anchor" href="#what-does-this-app-do" aria-hidden="true"><span class="octicon octicon-link"></span></a>What does this app do?</h1>
+
+<p>This app calculates the cardio vascular disease based on patients age, blood pressure, HDL-C, LDL-C, smoking history, diabetic history and their gender.
+Doctors are the only ones who have ability to calculate, insert new entry, search patients, write recommendations for every entry and view the risk chart instantly after calculating the result.
+Patients only have ability to view their details and be aware of any new entry inserted by doctors.They cannot delete anything or update anything. They are also able to view the chart representing every cardio vascular disease entry created by doctors.</p>
+
+<h1>
+<a id="what-language-is-used" class="anchor" href="#what-language-is-used" aria-hidden="true"><span class="octicon octicon-link"></span></a>What language is used?</h1>
+
+<p>I used PHP, MySQL, advanced JavaScript and jQuery. Also HTML5 and CSS3 is used for presentation. Canvas.js library is used to generate the chart with the help of JavaScript. The total point is calculated based on patients' gender. Every gender has it's own algorithms to calculate the total point.</p>
+
+<h1>
+<a id="how-to-install" class="anchor" href="#how-to-install" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to install?</h1>
+
+<ul>
+<li>Download the project and unzip in your localhost root directory if you are using local web server such as Apache.</li>
+<li>Create a database and name it anything you want such as CVD.</li>
+<li>Import the cvd.sql file in your databse using a database GUI interface such as phpMyAdmin, Navicat or etcetera or paste the code in your command-line after selecting your chosen database to create the tables.</li>
+<li>Open includes/db_connection.php and manipulate the details to be able to connect your MySQL database.</li>
+</ul>
+
+<h1>
+<a id="how-to-use-this-app" class="anchor" href="#how-to-use-this-app" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use this app?</h1>
+
+<p>There are 2 types of users:
+1. Patients
+2. Doctors</p>
+
+<h3>
+<a id="doctors-credentials" class="anchor" href="#doctors-credentials" aria-hidden="true"><span class="octicon octicon-link"></span></a>Doctor's credentials:</h3>
+
+<p>Username: doctor
+Password: 123</p>
+
+<h3>
+<a id="patients-credentials" class="anchor" href="#patients-credentials" aria-hidden="true"><span class="octicon octicon-link"></span></a>Patient's credentials:</h3>
+
+<p>Username: amir
+Password: 321</p>
+
+<p>There are no registration for the system. Patients can be added through database and because the password is blowfish encrypted, therefore, by adding patients email password can be reset via forgot password feature.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/hassanazimi">hassanazimi</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
